@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box{
+        display: flex;
+        gap: 10px;
+    }
+    .item-1{
+        flex-shrink: 0;
+    }
+    .item-1 p{
+        cursor: pointer;
+        user-select: none;
+    }
+    .item-1 p:hover{
+        background-color: yellow;
+    }
+    iframe {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+
+  <script defer>
+      function getName(id){
+        const iframe = document.getElementById('pdf')
+        iframe.src = `baza${id}.pdf`
+    
+    }
+  </script>
+  <body>
+    <div class="box">
+      <div class="item-1">
+        <p onclick="getName(1)">BAZA 1</p>
+        <p onclick="getName(2)">BAZA 2</p>
+      </div>
+      <iframe src="baza1.pdf" frameborder="0" scrolling="auto" id="pdf"></iframe>
+    </div>
+  </body>
+</html>
